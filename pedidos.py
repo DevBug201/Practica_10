@@ -118,7 +118,11 @@ def ver_pedidos():
     else:
         for i, p in enumerate(pedidos, start=1):
             total = p.total_con_descuento()
-            print(str(i) + ". Cliente: " + p.cliente.nombre + " | Estado: " + p.estado + " | Total: " + str(round(total, 2)) + " €")
+            print(
+                str(i) + ". Cliente: " + p.cliente.nombre +
+                " | Estado: " + p.estado +
+                " | Total: " + str(round(total, 2)) + " €"
+            )
 
 
 def calcular_total_desde_menu():
