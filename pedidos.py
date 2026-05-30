@@ -74,8 +74,8 @@ def ver_pedidos():
         pos = 0
         for p in pedidos:
             total = 0
-            for l in p["lineas"]:
-                total = total + l["cantidad"] * l["precio"]
+        for linea in p["lineas"]:
+            total = total + linea["cantidad"] * linea["precio"]
             if total > 100:
                 total = total - total * 0.10
             elif total > 50:
