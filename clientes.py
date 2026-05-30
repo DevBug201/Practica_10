@@ -42,11 +42,8 @@ def listar_clientes():
     if len(clientes) == 0:
         print("No hay clientes")
     else:
-        i = 0
-        while i < len(clientes):
-            c = clientes[i]
-            print(str(i + 1) + ". " + c["nombre"] + " - " + c["telefono"] + " - " + c["email"])
-            i = i + 1
+        for i, c in enumerate(clientes, start=1):
+            print(str(i) + ". " + c["nombre"] + " - " + c["telefono"] + " - " + c["email"])
 
 
 def buscar_cliente():
