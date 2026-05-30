@@ -43,12 +43,16 @@ def calcular_total_lineas(lineas):
     return sum(linea.subtotal() for linea in lineas)
 
 
+DESCUENTOS = [
+    (200, 0.15),
+    (100, 0.10),
+]
+
 def calcular_descuento(subtotal):
-    """Devuelve el descuento según el subtotal: 15% si >=200, 10% si >=100."""
-    if subtotal >= 200:
-        return subtotal * 0.15
-    elif subtotal >= 100:
-        return subtotal * 0.10
+    """Devuelve el descuento según el subtotal usando tabla de tramos."""
+    for minimo, porcentaje in DESCUENTOS:
+        if subtotal >= minimo:
+            return subtotal * porcentaje
     return 0
 
 
