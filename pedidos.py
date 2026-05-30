@@ -40,7 +40,7 @@ class Pedido:
 
 def calcular_total_lineas(lineas):
     """Suma los subtotales de todas las líneas."""
-    return sum(l.subtotal() for l in lineas)
+    return sum(linea.subtotal() for linea in lineas)
 
 
 def calcular_descuento(subtotal):
