@@ -33,3 +33,6 @@ def test_no_permite_cantidad_cero():
     linea = LineaPedido("Mesa", 80.0, 0)
     with pytest.raises(ValueError):
         linea.subtotal()
+
+def test_sin_descuento_menos_de_100():
+    assert calcular_descuento(80.0) == 0
